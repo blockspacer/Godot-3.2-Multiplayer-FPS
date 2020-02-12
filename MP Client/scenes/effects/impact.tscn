@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/effects/impact.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 0.25, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[sub_resource type="SphereMesh" id=4]
+material = SubResource( 3 )
+radius = 0.125
+height = 0.25
+
+[node name="impact" type="Spatial"]
+script = ExtResource( 1 )
+color = Color( 0.2, 0.2, 0.2, 1 )
+
+[node name="mesh" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="mesh_2" type="MeshInstance" parent="."]
+mesh = SubResource( 4 )
+material/0 = null

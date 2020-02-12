@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.4, 0.4, 0.4, 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 0.5, 0.5 )
+
+[node name="impact" type="Spatial"]
+
+[node name="mesh" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null

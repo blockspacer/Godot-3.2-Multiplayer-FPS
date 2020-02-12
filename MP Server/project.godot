@@ -1,0 +1,55 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "BasePlayer",
+"language": "GDScript",
+"path": "res://scripts/player/base_player.gd"
+}, {
+"base": "BasePlayer",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/player/player.gd"
+} ]
+_global_script_class_icons={
+"BasePlayer": "",
+"Player": ""
+}
+
+[application]
+
+config/name="MP Server"
+run/main_scene="res://scenes/main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+utils="*res://scripts/utils.gd"
+preloader="*res://scripts/preloader.gd"
+game="*res://scripts/game.gd"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/resizable=false
+
+[node]
+
+name_num_separator=2
+name_casing=2
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
